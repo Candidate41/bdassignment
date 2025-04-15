@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Nanit Assignment Client</string>
+    <string name="company_name">nanit</string>
+    <string name="month_old">MONTH OLD!</string>
+    <string name="today_is">TODAY %1$s IS</string>
+    <string name="confirm">Confirm</string>
+    <string name="host_hint">Ip address</string>
+    <string name="host_title">Enter host</string>
+    <string name="retry">Retry</string>
+    <string name="re_enter_host">Re-enter host</string>
+    <string name="error_title">Error</string>
+    <string name="error_text">An unknown error occurred.</string>
+
+    <plurals name="age_months">
+        <item quantity="one">MONTH OLD!</item>
+        <item quantity="other">MONTHS OLD!</item>
+    </plurals>
+
+    <plurals name="age_years">
+        <item quantity="one">YEAR OLD!</item>
+        <item quantity="other">YEARS OLD!</item>
+    </plurals>
+</resources>
