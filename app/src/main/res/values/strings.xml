@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Nanit Assignment Client</string>
-    <string name="company_name">nanit</string>
     <string name="month_old">MONTH OLD!</string>
     <string name="today_is">TODAY %1$s IS</string>
     <string name="confirm">Confirm</string>
