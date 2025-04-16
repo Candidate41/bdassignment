@@ -1,7 +1,7 @@
 package com.example.nanitassignmentclient.babybirthday.ui.component
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
@@ -16,12 +16,9 @@ import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.nanitassignmentclient.R
 import com.example.nanitassignmentclient.babybirthday.domain.model.AgeUnit
 import com.example.nanitassignmentclient.babybirthday.ui.model.BabyInfoUiModel
 import com.example.nanitassignmentclient.common.theme.FoxTheme
@@ -37,11 +34,13 @@ fun BabyBirthdayContent(babyInfo: BabyInfoUiModel) {
                 .fillMaxSize()
                 .padding(horizontal = 16.dp)
                 .padding(WindowInsets.safeDrawing.asPaddingValues()),
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.SpaceEvenly,
         ) {
             Spacer(
                 modifier = Modifier
                     .heightIn(min = 20.dp)
+                    .weight(1f)
             )
 
             BabyBirthdayInfo(babyInfo)
@@ -49,6 +48,7 @@ fun BabyBirthdayContent(babyInfo: BabyInfoUiModel) {
             Spacer(
                 modifier = Modifier
                     .heightIn(min = 15.dp)
+                    .weight(1f)
             )
 
             BabyBirthdayImage(
@@ -59,13 +59,8 @@ fun BabyBirthdayContent(babyInfo: BabyInfoUiModel) {
                     .fillMaxWidth()
             )
 
-            Spacer(modifier = Modifier.height(15.dp))
-
-            Image(
-                painter = painterResource(id = R.drawable.logo_nanit),
-                contentDescription = null,
-                contentScale = ContentScale.Fit
-            )
+            // 15dp space + 30dp image
+            Spacer(modifier = Modifier.height(45.dp))
         }
     }
 }
