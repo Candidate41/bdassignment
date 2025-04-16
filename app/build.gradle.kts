@@ -2,10 +2,10 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.hilt)
 
     id("kotlin-kapt")
-    id("com.google.dagger.hilt.android")
-    kotlin("plugin.serialization") version "2.0.21"
 }
 
 android {
@@ -51,25 +51,17 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
 
-    implementation("io.ktor:ktor-client-core:2.3.9")
-    implementation("io.ktor:ktor-client-cio:2.3.9")
-    implementation("io.ktor:ktor-client-websockets:2.3.9")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+    implementation(libs.ktor.client.core)
+    implementation(libs.ktor.client.cio)
+    implementation(libs.ktor.client.websockets)
+    implementation(libs.kotlinx.serialization.json)
 
-    implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.lifecycle.runtime.compose)
 
-    // Hilt + Compose support (for hiltViewModel())
-    implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
-
-// Lifecycle ViewModel support for Compose
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
-
-// For collectAsStateWithLifecycle (optional but recommended)
-    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.7.0")
-
-    implementation("com.google.dagger:hilt-android:2.51.1")
-
-    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+    implementation(libs.hilt.android)
+    implementation(libs.hilt.navigation.compose)
+    kapt(libs.hilt.android.compiler)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
